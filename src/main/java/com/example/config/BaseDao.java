@@ -26,12 +26,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * DAO实现
- * @author daijian.song
- * @since 2015年8月10日 下午6:32:36
- * @version 1.0.0
- */
 @Service
 public abstract class BaseDao {
 
@@ -66,8 +60,8 @@ public abstract class BaseDao {
         // jdbcTemplate.setMaxRows(pageSize);
         List rows = jdbcTemplate.queryForList(sql + " between " + startIndex + "and"
                 + startIndex + pageSize + " ");
-        Pagination pagination = new Pagination(pageNumber, pageSize, total, rows);
-        return pagination;
+//        Pagination pagination = new Pagination(pageNumber, pageSize, total, rows);
+        return new Pagination();
     }
     
 //	public String sqlMap(final String key) {
@@ -373,7 +367,7 @@ public abstract class BaseDao {
         List rows = queryForList(sql + " limit " + startIndex + "," + pageSize, args,
                 clazz);
         ;
-        Pagination pagination = new Pagination(pageNumber, pageSize, total, rows);
+        Pagination pagination = new Pagination();
         return pagination;
     }
     
@@ -403,7 +397,7 @@ public abstract class BaseDao {
         
         List rows = jdbcTemplate.queryForList(sql + " limit " + startIndex + ","
                 + pageSize, args);
-        Pagination page = new Pagination(pageNumber, pageSize, total, rows);
+        Pagination page = new Pagination();
         return page;
     }
 

@@ -2,11 +2,28 @@ package com.example.suanfa;
 
 /**
  * 单链表反转
+ * 我们可以申请两个指针，第一个指针叫 pre，最初是指向 null 的。
+ * 第二个指针 cur 指向 head，然后不断遍历 cur。
+ * 每次迭代到 cur，都将 cur 的 next 指向 pre，然后 pre 和 cur 前进一位。
+ * 都迭代完了(cur 变成 null 了)，pre 就是最后一个节点了。
+ *。
  */
 public class ListNodeReverse {
 
     public static ListNode reverseList(ListNode head) {
-        return null;
+        if(head ==null || head.next ==null){
+            return null;
+        }
+        ListNode pre = null;
+        ListNode cur = head.next;
+        ListNode tmp = null;
+        while (cur!=null){
+            tmp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = tmp;
+        }
+        return pre;
     }
 
     public static class ListNode {
@@ -29,6 +46,7 @@ public class ListNodeReverse {
         listNode3.next = listNode4;
         listNode4.next = listNode5;
         listNode5.next = null;
-        reverseList(listNode1);
+        ListNode final1 = reverseList(listNode1);
+        System.out.println(final1.toString());
     }
 }

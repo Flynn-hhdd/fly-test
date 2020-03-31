@@ -1,7 +1,10 @@
 package com.example.suanfa;
 
+import java.util.AbstractQueue;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author LingYin.Fan
@@ -12,6 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class XunhuanABC {
     public static void main(String[] args) {
+        ReentrantLock lock = new ReentrantLock();
         test2();
     }
 

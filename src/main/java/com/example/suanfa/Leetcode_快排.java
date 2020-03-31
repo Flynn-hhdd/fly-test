@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @Description TODO
  * @createTime 2020年03月13日 12:33:00
  */
-public class QuickSort {
+public class Leetcode_快排 {
 
     public static void sort1(int[] array, int left, int right) {
         if(left > right) {

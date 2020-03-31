@@ -3,7 +3,9 @@ package com.example.suanfa;
 import com.sun.tools.classfile.Opcode;
 
 import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author LingYin.Fan
@@ -17,6 +19,8 @@ public class DongTaiGuiHua {
 
 
     public static void main(String[] args) {
+        AtomicInteger atomicInteger = new AtomicInteger();
+        atomicInteger.getAndIncrement();
         HashSet set = new HashSet();
         set.add(1);
         HashMap map = new HashMap();

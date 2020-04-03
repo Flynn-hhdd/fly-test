@@ -76,29 +76,39 @@ public class Leetcode_链表 {
      * 反转单链表
      * @param head
      */
-    public static void reverse(ListNode head){
+    public static ListNode reverse(ListNode head){
         ListNode pre = null;
         ListNode cur = head;
         ListNode tmp = null;
-
+        while (cur!=null){
+            tmp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = tmp;
+        }
+        return pre;
     }
 
 
     public static void main(String[] args) {
-        ListNode listNode0 = new ListNode(8);
-
-        ListNode listNode1 = new ListNode(4);
-        ListNode listNode2 = new ListNode(1);
-        ListNode listNode3 = new ListNode(8);
-        ListNode listNode4 = new ListNode(4);
-        ListNode listNode5 = new ListNode(5);
-        listNode1.next = listNode2;
-        listNode2.next = listNode3;
-        listNode3.next = listNode4;
-        listNode4.next = listNode5;
-        ListNode listNode = getIntersectionNode2(listNode0, listNode1);
-        System.out.println(listNode);
+//        ListNode listNode0 = new ListNode(8);
+//
+//        ListNode listNode1 = new ListNode(4);
+//        ListNode listNode2 = new ListNode(1);
+//        ListNode listNode3 = new ListNode(8);
+//        ListNode listNode4 = new ListNode(4);
+//        ListNode listNode5 = new ListNode(5);
+//        listNode1.next = listNode2;
+//        listNode2.next = listNode3;
+//        listNode3.next = listNode4;
+//        listNode4.next = listNode5;
+//        ListNode listNode = getIntersectionNode2(listNode0, listNode1);
+//        System.out.println(listNode);
 //        ListNode final1 = reverseList(listNode1);
 //        System.out.println(final1.toString());
+        Integer ia = Integer.valueOf(10);
+        Integer ib = Integer.valueOf(10);
+        Integer ic = new Integer(10);
+
     }
 }

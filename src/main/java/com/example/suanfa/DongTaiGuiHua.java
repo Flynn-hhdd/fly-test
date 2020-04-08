@@ -6,6 +6,7 @@ import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author LingYin.Fan
@@ -29,9 +30,12 @@ public class DongTaiGuiHua {
         hashtable.keySet().iterator();
         ArrayList arrayList = new ArrayList();
         LinkedList linkedList = new LinkedList();
+        linkedList.pop();
         arrayList.add(1);
         System.out.println();
         CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
         copyOnWriteArrayList.add("1");
+        ReentrantLock lock = new ReentrantLock();
+        System.out.println(2+9+29+90+71+46+34+44+30+57+50+16+8+10+7+5);
     }
 }

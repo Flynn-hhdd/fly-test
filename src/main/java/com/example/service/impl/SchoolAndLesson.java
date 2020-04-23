@@ -2,6 +2,7 @@ package com.example.service.impl;
 
 import com.sun.tools.javac.util.List;
 import lombok.Data;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author LingYin.Fan

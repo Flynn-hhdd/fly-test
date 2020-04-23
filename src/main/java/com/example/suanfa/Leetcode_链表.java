@@ -1,7 +1,14 @@
 package com.example.suanfa;
 
+import org.springframework.boot.configurationprocessor.json.JSONObject;
+
+import java.awt.*;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+
+import static java.math.BigDecimal.*;
 
 /**
  * @author LingYin.Fan
@@ -89,6 +96,43 @@ public class Leetcode_链表 {
         return pre;
     }
 
+    /**
+     * 合并两个有序链表
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode listNodeNew = new ListNode(0);
+        ListNode node = listNodeNew;
+
+        while (l1!=null&&l2!=null){
+            if(l1.val<l2.val){
+                node.next = l1;
+                node = node.next;
+                l1 = l1.next;
+            }else {
+                node.next = l2;
+                node = node.next;
+                l2 = l2.next;
+            }
+        }
+        if(l1==null&&l2==null){
+            return null;
+        }
+        if(l1==null){
+            node.next=l2;
+        }
+        if(l2==null){
+            node.next=l1;
+        }
+        return listNodeNew.next;
+    }
+
+//    public static boolean isPalindrome(ListNode head){
+//
+//    }
+
 
     public static void main(String[] args) {
 //        ListNode listNode0 = new ListNode(8);
@@ -106,9 +150,14 @@ public class Leetcode_链表 {
 //        System.out.println(listNode);
 //        ListNode final1 = reverseList(listNode1);
 //        System.out.println(final1.toString());
-        Integer ia = Integer.valueOf(10);
-        Integer ib = Integer.valueOf(10);
-        Integer ic = new Integer(10);
+//        Integer ia = Integer.valueOf(10);
+//        Integer ib = Integer.valueOf(10);
+//        Integer ic = new Integer(10);
+//        BigDecimal c = new BigDecimal("365").divide(new BigDecimal("7"), 16, ROUND_HALF_EVEN);
+//        System.out.println(Math.pow(1.00002694,c.doubleValue()));
+//        System.out.println(c);
+
+
 
     }
 }

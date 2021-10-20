@@ -16,7 +16,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class XunhuanABC {
     public static void main(String[] args) {
         ReentrantLock lock = new ReentrantLock();
-        test2();
+        test1();
     }
 
     public static void test2() {
@@ -49,7 +49,7 @@ public class XunhuanABC {
 
     }
 
-    public void test1() {
+    public static void test1() {
         Semaphore a = new Semaphore(1);
         Semaphore b = new Semaphore(0);
         Semaphore c = new Semaphore(0);

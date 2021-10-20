@@ -1,6 +1,5 @@
 package com.example.suanfa;
 
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 
 import java.awt.*;
 import java.math.BigDecimal;
@@ -83,12 +82,11 @@ public class Leetcode_链表 {
      * 反转单链表
      * @param head
      */
-    public static ListNode reverse(ListNode head){
+    public static ListNode reverse(ListNode head) {
         ListNode pre = null;
         ListNode cur = head;
-        ListNode tmp = null;
-        while (cur!=null){
-            tmp = cur.next;
+        while (cur != null) {
+            ListNode tmp = cur.next;
             cur.next = pre;
             pre = cur;
             cur = tmp;

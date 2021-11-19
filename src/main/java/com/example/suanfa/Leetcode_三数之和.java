@@ -52,10 +52,27 @@ public class Leetcode_三数之和 {
         }
         return result.toArray();
     }
+    public static List<List<Integer>> threeSumAnother(int[] nums) {
+
+        if (nums == null || nums.length <= 3) {
+            return null;
+        }
+        List<List<Integer>> result = new ArrayList<>();
+        for(int i = 0;i<nums.length;i++){
+            for(int j = nums.length-1,k=1;k<j;j--,k++){
+                if((nums[i]+nums[j]+nums[k])==0){
+                    result.add(Arrays.asList(nums[i], nums[j], nums[k]));
+                }
+            }
+        }
+
+        return result;
+    }
+
 
     public static void main(String[] args) {
-        int[] a = new int[]{1, 2, 3, 4, 5, 6};
-        Object[] b = threeSum(a, 11);
+        int[] a = new int[]{-1,0,1,2,-1,-4};
+        List<List<Integer>> b = threeSumAnother(a);
         System.out.println(b);
     }
 

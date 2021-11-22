@@ -1,4 +1,4 @@
-package com.example.suanfa;
+package com.example.suanfa.sort;
 
 import java.util.Arrays;
 

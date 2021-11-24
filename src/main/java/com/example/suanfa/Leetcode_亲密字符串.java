@@ -3,6 +3,12 @@ package com.example.suanfa;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * 解题思路
+ * 1、如果两个字符串长度不一样直接返回
+ * 2、s与目标字符串存在两个以上字符不一样直接返回
+ * 3、字符串完全一样，只要字符串里面有重复片段即可
+ */
 public class Leetcode_亲密字符串 {
 
     public static boolean buddyStrings(String s, String goal) {

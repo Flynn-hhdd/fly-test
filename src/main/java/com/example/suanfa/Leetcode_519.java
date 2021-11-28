@@ -68,4 +68,37 @@ public class Leetcode_519 {
      *         }
      *         return null;
      */
+    // 不区分概率的方式
+
+    /**
+     * private int resetM;
+     *     private int resetN;
+     *     private int[][] array;
+     *     private int L, R = 0;
+     *     private Set<String> set;
+     *
+     *     public Leetcode_519(int m, int n) {
+     *         resetM = m;
+     *         resetN = n;
+     *         this.array = new int[m][n];
+     *         this.set = new HashSet<>();
+     *     }
+     *
+     *     public int[] flip() {
+     *         int[] result = null;
+     *         while (L <resetM && R < resetN) {
+     *             if (array[L][R] == 0 && !set.contains(L + "," + R)) {
+     *                 result = new int[]{L, R};
+     *                 array[L][R] = 1;
+     *                 L++;
+     *                 if (L == resetM) {
+     *                     L = 0;
+     *                     R++;
+     *                 }
+     *                 set.add(L + "," + R);
+     *                 return result;
+     *             }
+     *         }
+     *         return result;
+     */
 }

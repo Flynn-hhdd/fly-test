@@ -38,4 +38,5 @@ public class Leetcode_1446 {
     public static void main(String[] args) {
         System.out.println(maxPower("wwlediwnugkktnlhmvfkewbiursjzbyqzcpmdwwfkgyowmfdbmaonmpzhmwbftvenpbtdlwurrusjsvwwflmkfrlzytponmouqflsuvoglynndulcoumfnewlgchmvtotyxvmrhqmddsdolbugpmtabacfedehdgxrkjvyfafrgjmadbidpykkktzixacmylqjhwzlrwgasywtfcpdartduvgbvmuq"));
     }
+
 }

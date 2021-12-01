@@ -16,9 +16,6 @@ public class Leetcode_400 {
             border *= 10;
             begin *=10;
         }
-        // 循环结束后 剩余的N都是由 digits位数 贡献的
-        // 每个 digits位数 都产生了 digits个数字；
-        // 因而我们求除求余就可以知道n对应的是第几个digits位数
 
         //offset对应的就是第几个 (9-1)/3=2 对应的102,求除获取第几个
         int offset = (int) ((N - 1) / digits);

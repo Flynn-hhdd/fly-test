@@ -1,6 +1,6 @@
 package com.example.suanfa;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**前序 中左右 中序 左中右 后序 左右中
  * @author LingYin.Fan
@@ -104,6 +104,33 @@ public class Leetcode_二叉树 {
         treeNode.left.right = new TreeNode(4);
         treeNode.right.left = new TreeNode(1);
         System.out.println(isSymmetric(treeNode));
+    }
+
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> value=new ArrayList<>();//存储到的最终结果
+        if(root==null)
+            return value;
+        int index=0;//判断
+        Queue<TreeNode> queue=new ArrayDeque<>();
+        queue.add(root);
+        while (!queue.isEmpty()){
+            LinkedList<Integer> va=new LinkedList();//临时 用于存储到value中
+            int len=queue.size();//当前层节点的数量
+            for(int i=0;i<len;i++){
+                TreeNode node=queue.poll();
+                if(index%2==0)//根据奇偶 选择添加策略
+                    va.add(node.val);
+                else
+                    va.addFirst(node.val);
+                if(node.left!=null)
+                    queue.add(node.left);
+                if(node.right!=null)
+                    queue.add(node.right);
+            }
+            value.add(va);
+            index++;
+        }
+        return value;
     }
 
 

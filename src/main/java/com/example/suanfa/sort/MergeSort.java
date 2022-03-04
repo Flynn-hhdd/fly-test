@@ -15,7 +15,9 @@ public class MergeSort {
         if(left == right){
             return;
         }
-        int mid = left + ((right - left) >> 1);
+        int mid = (left + right) /2;
+        //优化点
+        mid = left+(right-left)>>1;
         process(array, left, mid);
         process(array, mid + 1, right);
         sort(array, left, mid, right);

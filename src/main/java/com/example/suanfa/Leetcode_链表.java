@@ -83,15 +83,15 @@ public class Leetcode_链表 {
      * @param head
      */
     public static ListNode reverse(ListNode head) {
-        ListNode pre = null;
+        ListNode result = null;
         ListNode cur = head;
         while (cur != null) {
             ListNode tmp = cur.next;
-            cur.next = pre;
-            pre = cur;
+            cur.next = result;
+            result = cur;
             cur = tmp;
         }
-        return pre;
+        return result;
     }
 
     /**

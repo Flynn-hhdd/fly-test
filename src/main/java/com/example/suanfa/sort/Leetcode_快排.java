@@ -11,45 +11,46 @@ import java.util.Arrays;
  */
 public class Leetcode_快排 {
 
-    public static void sort1(int[] array, int left, int right) {
-        if(left > right) {
+    private static void quickSort(int[] array, int left, int right) {
+        if (left >= right) {
             return;
         }
-        // base中存放基准数
+        int base = partition(array, left, right);
+        quickSort(array, left, base);
+        quickSort(array, base + 1, right);
+    }
+
+    private static int partition(int[] array, int left, int right) {
         int base = array[left];
         int i = left, j = right;
-        while(i != j) {
-            // 顺序很重要，先从右边开始往左找，直到找到比base值小的数
-            while(array[j] >= base && i < j) {
+        while (i < j) {
+            //找右面第一个比base小的值
+            while (array[j] >= base && i < j) {
                 j--;
             }
-
-            // 再从左往右边找，直到找到比base值大的数
-            while(array[i] <= base && i < j) {
+            //找左边第一个比base大的值
+            while (array[i] <= base && i < j) {
                 i++;
             }
-
-            // 上面的循环结束表示找到了位置或者(i>=j)了，交换两个数在数组中的位置
-            if(i < j) {
-                int tmp = array[i];
-                array[i] = array[j];
-                array[j] = tmp;
+            //交换
+            if (i < j) {
+                swap(array, i, j);
             }
         }
 
-        // 将基准数放到中间的位置（基准数归位）
-        array[left] = array[i];
-        array[i] = base;
+       swap(array,left,j);
+        return i;
+    }
 
-        // 递归，继续向基准的左右两边执行和上面同样的操作
-        // i的索引处为上面已确定好的基准值的位置，无需再处理
-        sort1(array, left, i - 1);
-        sort1(array, i + 1, right);
+    private static void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 
     public static void main(String[] args) {
-        int[] array = new int[]{1,2,5,7,3,8,5,2};
-        sort1(array,0,array.length-1);
+        int[] array = new int[]{5,4,3,2,1};
+        quickSort(array, 0, array.length - 1);
         System.out.println(Arrays.toString(array));
     }
 }

@@ -12,9 +12,11 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Description CountDownLatch和Cyclicbarrier概念
  * @createTime 2020年03月16日 10:38:00
  */
-public class CountDownLatch {
+public class CountDownLatchTest {
     static ArrayList<String> res = new ArrayList<>();
     ReentrantLock lock = new ReentrantLock();
+
+
     public static List<String> generateParenthesis(int n) {
         dfs(n , n , "");
         return res;
